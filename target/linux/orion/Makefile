@@ -12,6 +12,7 @@ BOARDNAME:=Marvell Orion
 FEATURES:=broken rtc
 SUBTARGETS:=generic harddisk
 MAINTAINER:=Imre Kaloz <kaloz@openwrt.org>
+DEVICE_TYPE:=developerboard
 
 KERNEL_PATCHVER:=4.9
 
@@ -19,6 +20,7 @@ include $(INCLUDE_DIR)/target.mk
 
 KERNELNAME:=zImage
 
-DEFAULT_PACKAGES += kmod-ath9k wpad-mini kmod-rtc-isl1208 uboot-envtools
+#DEFAULT_PACKAGES += kmod-ath9k wpad-basic kmod-rtc-isl1208 uboot-envtools
+DEFAULT_PACKAGES += kmod-ath9k wpad-basic kmod-rtc-isl1208 uboot-envtools uhttpd uhttpd-mod-ubus libiwinfo-lua luci-base luci-app-firewall luci-mod-admin-full luci-theme-bootstrap relayd luci-proto-relay dnsmasq iptables firewall kmod-ipt-offload
 
 $(eval $(call BuildTarget))
